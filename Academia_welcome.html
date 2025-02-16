@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            min-height: 100vh;
+        }
+        nav {
+            background-color: #2064b7;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav .logo {
+            font-size: 1.5rem;
+        }
+        nav .login-section {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        nav input {
+            padding: 0.5rem;
+            margin: 0 0.5rem;
+        }
+        nav button {
+            padding: 0.5rem 1rem;
+            background-color: #f4f4f4;
+            color: #2064b7;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-radius: 12px;
+            font-weight: bold;
+        }
+        .container {
+            display: flex;
+            flex-grow: 1;
+            width: 100%;
+        }
+        .left-sidebar {
+            width: 10%;
+            background-color: #f4f4f4;
+            padding: 1rem;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            border-right: 2px solid #2064b7;
+        }
+        .left-sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .left-sidebar ul li {
+            margin: 1rem 0;
+        }
+        .left-sidebar ul li button {
+            width: 100%;
+            padding: 0.5rem;
+            background-color: white;
+            color: #2064b7;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-radius: 12px;
+            font-weight: bold;
+        }
+        .left-sidebar ul li button:hover {
+            color: #184a8c;
+            font-weight: bold;
+        }
+        .content {
+            width: 90%;
+            padding: 1rem;
+            background: url('EducateLearnCollaboratev1.png') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        footer {
+            background-color: #f4f4f4;
+            color: rgb(39, 35, 35);
+            text-align: center;
+            display: flex;
+            padding: 1rem;
+            margin-left: 0%;
+        }
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .flex-content {
+            flex-grow: 1;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .left-sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 2px solid #2064b7;
+            }
+            .content {
+                width: 100%;
+            }
+            footer {
+                width: 100%;
+                margin-left: 0;
+                border-left: none;
+                border-top: 2px solid #2064b7;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .left-sidebar {
+                width: 15%;
+            }
+            .content {
+                width: 85%;
+            }
+            footer {
+                width: 85%;
+                margin-left: 15%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="National University of Lesotho" style="height:50px;">
+            </div>
+            <div class="login-section">
+                <input type="text" placeholder="Student Number">
+                <input type="password" placeholder="Password">
+                <button><span class="material-icons">login</span>Login</button>
+            </div>
+        </nav>
+        <div class="container flex-content">
+            <aside class="left-sidebar">
+                <ul>
+                    <li><button><span class="material-icons">home</span>Welcome</button></li>
+                    <li><button><span class="material-icons">school</span>Tutorials</button></li>
+                    <li><button><span class="material-icons">lock_reset</span>Reset Password</button></li>
+                    <li><button><span class="material-icons">info</span>About Us</button></li>
+                    <li><button><span class="material-icons">contacts</span>Contacts</button></li>
+                    <li><button><span class="material-icons">help</span>Help</button></li>
+                </ul>
+            </aside>
+            <main class="content">
+                <!-- Add your main content here -->
+            </main>
+        </div>
+        <footer>
+            © 2025 Your Website. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>
