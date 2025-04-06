@@ -2,113 +2,181 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Firm</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Swiftconnect Digital Firm</title>
+    <!-- Link to Boxicons for icons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f5;
+            background-image: url('https://www.parascript.com/wp-content/uploads/2020/03/information-management-parascript-1170x893-1030x786-1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #333;
+        }
+
+        /* Overlay to improve text readability */
+        .overlay {
+            background-color: rgba(255, 255, 255, 0.95);
+            width: 100%;
+            min-height: 100vh;
+            padding: 40px 20px;
+            box-sizing: border-box;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 20px 0;
+        }
+        .header h1 {
+            font-size: 42px;
+            color: #004080;
+            margin: 0;
+        }
+        .header p {
+            font-size: 24px;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        /* Navigation Bar */
+        .nav-bar {
+            background-color: #004080;
+            overflow: hidden;
+        }
+        .nav-bar a {
+            float: left;
+            display: block;
+            color: #f0f4f5;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .nav-bar a:hover {
+            background-color: #0059b3;
+            color: white;
+        }
+        .nav-bar a.active {
+            background-color: #003366;
+            color: white;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .services h2 {
+            font-size: 32px;
+            color: #0066cc;
+            margin-bottom: 30px;
+        }
+        .service-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .service-card {
+            background-color: #ffffff;
+            width: 300px;
+            margin: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .service-card h3 {
+            font-size: 24px;
+            color: #004080;
+            margin-top: 0;
+        }
+        .service-card p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #004080;
+            color: #f0f4f5;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Responsive Adjustments */
+        @media screen and (max-width: 768px) {
+            .service-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+            .nav-bar a {
+                float: none;
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Login Form -->
-    <div class="login-container">
-        <h2>Swiftconnect Login</h2>
-        <div class="form-group">
-            <label for="username">Username:</label>
-            <input type="text" id="username" placeholder="Enter Username" required>
-            <i class='bx bxs-user'></i>
+        <!-- Navigation Bar -->
+        <div class="nav-bar">
+            <a href="#" class="active">Home</a>
+            <a href="#">Services</a>
+            <a href="login.html">Login</a>
+            <a href="#">Contact Us</a>
         </div>
-        <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" id="password" placeholder="Enter Password" required>
-            <i class='bx bxs-lock-alt'></i>
-        </div>
-        <div class="form-group">
-            <label for="loginAs">Login as:</label>
-            <select id="loginAs">
-                <option value="">Select Your Role</option>
-                <option value="strategic">Top Management</option>
-                <option value="tactical">Middle Management</option>
-                <option value="operational">Frontline Employee</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Login" onclick="login()">
-        </div>
-        <footer>
-            <p>&copy; 2025 Swiftconnect Digital Firm</p>
-        </footer>
-    </div>
 
-    <!-- Strategic Level Dashboard -->
-    <div id="strategicDashboard" class="dashboard">
-        <div class="sidebar">
-            <h2>Strategic Dashboard</h2>
-            <button onclick="showContent('businessModel')">Business Model</button>
-            <button onclick="showContent('partnerships')">Manage Partnerships</button>
-            <button onclick="showContent('investments')">Investment Decisions</button>
-            <!-- New Features -->
-            <button onclick="showContent('fileSharing')">File Sharing</button>
-            <button onclick="showContent('voip')">VoIP Calls</button>
-            <button onclick="showContent('videoConferencing')">Video Conferencing</button>
-            <div class="logout-button">
-                <button onclick="logout()">Logout</button>
-            </div>
-        </div>
-        <div class="content strategic-content">
-            <div class="content-overlay" id="strategicContent">
-                <!-- Content will display here -->
-                <h3>Welcome to the Strategic Dashboard</h3>
-                <p>Select an option from the menu to view details.</p>
-            </div>
-        </div>
-    </div>
+        <div class="overlay">
+          <!-- Header -->
+          <div class="header">
+              <h1>Swiftconnect Digital Firm</h1>
+              <p> <br> "Empowering businesses with secure, reliable, and efficient digital communication solutions to enhance productivity and data privacy"</p>
+          </div>
 
-    <!-- Tactical Level Dashboard -->
-    <div id="tacticalDashboard" class="dashboard">
-        <div class="sidebar">
-            <h2>Tactical Dashboard</h2>
-            <button onclick="showContent('productDevelopment')">Product Development</button>
-            <button onclick="showContent('marketingStrategies')">Marketing Strategies</button>
-            <button onclick="showContent('networkOperations')">Network & IT Operations</button>
-            <!-- New Features -->
-            <button onclick="showContent('fileSharing')">File Sharing</button>
-            <button onclick="showContent('instantMessaging')">Instant Messaging</button>
-            <button onclick="showContent('videoConferencing')">Video Conferencing</button>
-            <div class="logout-button">
-                <button onclick="logout()">Logout</button>
+        <!-- Services Section -->
+        <div class="services">
+            <h2>Our Services</h2>
+            <div class="service-cards">
+                <!-- Prepaid Services -->
+                <div class="service-card">
+                    <h3><i class='bx bx-phone-call'></i> Prepaid Services</h3>
+                    <p>Purchase airtime and data bundles in advance to stay connected without any surprises.</p>
+                </div>
+                <!-- Postpaid Services -->
+                <div class="service-card">
+                    <h3><i class='bx bx-calendar'></i> Postpaid Services</h3>
+                    <p>Enjoy the convenience of monthly billing for your calls, data, and SMS usage.</p>
+                </div>
+                <!-- Subscription-Based Plans -->
+                <div class="service-card">
+                    <h3><i class='bx bx-package'></i> Subscription-Based Plans</h3>
+                    <p>Choose from fixed-price unlimited or limited plans tailored to your communication needs.</p>
+                </div>
+                <!-- Device Financing -->
+                <div class="service-card">
+                    <h3><i class='bx bx-mobile-alt'></i> Device Financing</h3>
+                    <p>Get the latest smartphones, routers, and accessories with easy installment payments.</p>
+                </div>
+                <!-- Value-Added Services -->
+                <div class="service-card">
+                    <h3><i class='bx bx-cloud'></i> Value-Added Services</h3>
+                    <p>Enhance your experience with VoIP, eSIM activation, streaming bundles, mobile money, and cloud storage.</p>
+                </div>
             </div>
         </div>
-        <div class="content tactical-content">
-            <div class="content-overlay" id="tacticalContent">
-                <!-- Content will display here -->
-                <h3>Welcome to the Tactical Dashboard</h3>
-                <p>Select an option from the menu to view details.</p>
-            </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>&copy; 2025 Swiftconnect Digital Firm. All rights reserved.</p>
         </div>
     </div>
-
-    <!-- Operational Level Dashboard -->
-    <div id="operationalDashboard" class="dashboard">
-        <div class="sidebar">
-            <h2>Operational Dashboard</h2>
-            <button onclick="showContent('customerInteractions')">Customer Interactions</button>
-            <button onclick="showContent('billingPayments')">Billing & Payments</button>
-            <button onclick="showContent('networkMaintenance')">Network Maintenance</button>
-            <!-- New Features -->
-            <button onclick="showContent('instantMessaging')">Instant Messaging</button>
-            <button onclick="showContent('voip')">VoIP Calls</button>
-            <div class="logout-button">
-                <button onclick="logout()">Logout</button>
-            </div>
-        </div>
-        <div class="content operational-content">
-            <div class="content-overlay" id="operationalContent">
-                <!-- Content will display here -->
-                <h3>Welcome to the Operational Dashboard</h3>
-                <p>Select an option from the menu to view details.</p>
-            </div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
