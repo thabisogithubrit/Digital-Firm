@@ -2,6 +2,120 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Firm</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- Login Form -->
+    <div class="login-container">
+        <h2>Swiftconnect Login</h2>
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter Username" required>
+            <i class='bx bxs-user'></i>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter Password" required>
+            <i class='bx bxs-lock-alt'></i>
+        </div>
+        <div class="form-group">
+            <label for="loginAs">Login as:</label>
+            <select id="loginAs">
+                <option value="">Select Your Role</option>
+                <option value="strategic">Top Management</option>
+                <option value="tactical">Middle Management</option>
+                <option value="operational">Frontline Employee</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Login" onclick="login()">
+        </div>
+        <footer>
+            <p>&copy; 2025 Swiftconnect Digital Firm</p>
+        </footer>
+    </div>
+
+    <!-- Strategic Level Dashboard -->
+    <div id="strategicDashboard" class="dashboard">
+        <div class="sidebar">
+            <h2>Strategic Dashboard</h2>
+            <button onclick="showContent('businessModel')">Business Model</button>
+            <button onclick="showContent('partnerships')">Manage Partnerships</button>
+            <button onclick="showContent('investments')">Investment Decisions</button>
+            <!-- New Features -->
+            <button onclick="showContent('fileSharing')">File Sharing</button>
+            <button onclick="showContent('voip')">VoIP Calls</button>
+            <button onclick="showContent('videoConferencing')">Video Conferencing</button>
+            <div class="logout-button">
+                <button onclick="logout()">Logout</button>
+            </div>
+        </div>
+        <div class="content strategic-content">
+            <div class="content-overlay" id="strategicContent">
+                <!-- Content will display here -->
+                <h3>Welcome to the Strategic Dashboard</h3>
+                <p>Select an option from the menu to view details.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tactical Level Dashboard -->
+    <div id="tacticalDashboard" class="dashboard">
+        <div class="sidebar">
+            <h2>Tactical Dashboard</h2>
+            <button onclick="showContent('productDevelopment')">Product Development</button>
+            <button onclick="showContent('marketingStrategies')">Marketing Strategies</button>
+            <button onclick="showContent('networkOperations')">Network & IT Operations</button>
+            <!-- New Features -->
+            <button onclick="showContent('fileSharing')">File Sharing</button>
+            <button onclick="showContent('instantMessaging')">Instant Messaging</button>
+            <button onclick="showContent('videoConferencing')">Video Conferencing</button>
+            <div class="logout-button">
+                <button onclick="logout()">Logout</button>
+            </div>
+        </div>
+        <div class="content tactical-content">
+            <div class="content-overlay" id="tacticalContent">
+                <!-- Content will display here -->
+                <h3>Welcome to the Tactical Dashboard</h3>
+                <p>Select an option from the menu to view details.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Operational Level Dashboard -->
+    <div id="operationalDashboard" class="dashboard">
+        <div class="sidebar">
+            <h2>Operational Dashboard</h2>
+            <button onclick="showContent('customerInteractions')">Customer Interactions</button>
+            <button onclick="showContent('billingPayments')">Billing & Payments</button>
+            <button onclick="showContent('networkMaintenance')">Network Maintenance</button>
+            <!-- New Features -->
+            <button onclick="showContent('instantMessaging')">Instant Messaging</button>
+            <button onclick="showContent('voip')">VoIP Calls</button>
+            <div class="logout-button">
+                <button onclick="logout()">Logout</button>
+            </div>
+        </div>
+        <div class="content operational-content">
+            <div class="content-overlay" id="operationalContent">
+                <!-- Content will display here -->
+                <h3>Welcome to the Operational Dashboard</h3>
+                <p>Select an option from the menu to view details.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <title>Swiftconnect Digital Firm</title>
     <!-- Link to Boxicons for icons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
