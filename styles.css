@@ -42,7 +42,8 @@
 
   /* Login Container */
   .login-container {
-      background-color: #ffffff;
+      /*background-color: #ffffff;*/
+      background-color: rgba(255, 255, 255, 0.5);
       width: 100%;
       max-width: 500px;
       margin: 80px auto;
